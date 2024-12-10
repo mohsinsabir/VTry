@@ -62,7 +62,7 @@ tokenizer_two = AutoTokenizer.from_pretrained(
     use_fast=False,
 )
 noise_scheduler = DDPMScheduler.from_pretrained(base_path, subfolder="scheduler")
-
+#here0
 text_encoder_one = CLIPTextModel.from_pretrained(
     base_path,
     subfolder="text_encoder",
@@ -257,17 +257,17 @@ for ex_human in human_list_path:
 
 ##default human
 
-
 image_blocks = gr.Blocks(theme="Nymbo/Alyx_Theme").queue()
 with image_blocks as demo:
-    gr.HTML("<center><h1>Virtual Try-On</h1></center>")
+    gr.HTML("<center><h1>V-Try</h1></center>")
     gr.HTML("<center><p>Upload an image of a person and an image of a garment ✨</p></center>")
     with gr.Row():
         with gr.Column():
             imgs = gr.ImageEditor(sources='upload', type="pil", label='Human. Mask with pen or use auto-masking', interactive=True)
-            with gr.Row():
+            #changes made here.
+            with gr.Column():
                 is_checked = gr.Checkbox(label="Yes", info="Use auto-generated mask (Takes 5 seconds)",value=True)
-            with gr.Row():
+            with gr.Column():
                 is_checked_crop = gr.Checkbox(label="Yes", info="Use auto-crop & resizing",value=False)
 
             example = gr.Examples(

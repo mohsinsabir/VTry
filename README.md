@@ -10,5 +10,3 @@ pinned: false
 license: cc-by-nc-sa-4.0
 short_description: High-fidelity Virtual Try-on
 ---
-
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
